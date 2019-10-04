@@ -1,11 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 class List extends Component {
     render() {
         return (
-            <ul>
-                { this.props.item.map((item, index) => <li key={index}> {item} </li>) }
-            </ul>
+            <Fragment>
+                <h1 className="mt-5">Todo List</h1>
+                <ul className="list-group text-left">
+                    { this.props.item.map((item, index) => <li className="list-group-item" key={index}> {item} </li>) }
+                </ul>
+            </Fragment>
         )
     }
 }

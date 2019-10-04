@@ -31,15 +31,21 @@ class App extends Component {
 	render() {
 		return (
 			<div className="container text-center">
-        <div className="card mt-5 text-center">
+        <h1 className="mt-5">Todo List</h1>
+        <div className="card text-center">
           <div className="card-body">
-            <h1>Todo List</h1>
+            
             <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
-                  <input className="form-control" value={this.state.todoItem} onChange={this.handleChange} />
+                  <div className="input-group mb-3">
+                    <div className="input-group-prepend">
+                      <span className="input-group-text" id="basic-addon1"><i className="fa fa-list"></i></span>
+                    </div>
+                    <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value={this.state.todoItem} onChange={this.handleChange}></input>
+                  </div>
                 </div>
                 <div className="form-group">
-                  <button className="btn btn-primary">Tambah</button>
+                  <button className="btn btn-primary btn-block">Tambah</button>
                 </div>
             </form>
           </div>
