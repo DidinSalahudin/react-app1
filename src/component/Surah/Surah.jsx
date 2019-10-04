@@ -12,17 +12,17 @@ class Surah extends Component {
         }
     }
 
-    componentDidMount() {
-        fetch("http://api.alquran.cloud/surah")
-            .then(response => response.json())
-            .then(data => this.setState({ item: data, isLoading: false }))
-    }
+    // componentDidMount() {
+    //     fetch("http://api.alquran.cloud/surah")
+    //         .then(response => response.json())
+    //         .then(data => this.setState({ item: data, isLoading: false }))
+    // }
 
     render() {
         const { item, isLoading } = this.state
-        if (isLoading) {
-            return <p>Loading . . . .</p>
-        }
+        // if (isLoading) {
+        //     return <p>Loading . . . .</p>
+        // }
         console.log(item.data)
         return (
             <Fragment>
@@ -30,11 +30,11 @@ class Surah extends Component {
                     <div className="title"><p>Qur'an App</p></div>
                 </div>
                 <div className="card-first">
-                    <ul>
+                    {/* <ul>
                         {
                             item.data.map((item, index) => <li key={index}>{item.englishName}</li>)
                         }
-                    </ul>
+                    </ul> */}
                 </div>
             </Fragment>
         )
