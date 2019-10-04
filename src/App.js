@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import List from './List';
+import './App.css';
+import './bootstrap.min.css';
 
 class App extends Component {
 
@@ -28,11 +30,20 @@ class App extends Component {
 
 	render() {
 		return (
-			<div>
-				<form onSubmit={this.handleSubmit}>
-            <input value={this.state.todoItem} onChange={this.handleChange} />
-            <button>Tambah</button>
-        </form>
+			<div className="container text-center">
+        <div className="card mt-5 text-center">
+          <div className="card-body">
+            <h1>Todo List</h1>
+            <form onSubmit={this.handleSubmit}>
+                <div className="form-group">
+                  <input className="form-control" value={this.state.todoItem} onChange={this.handleChange} />
+                </div>
+                <div className="form-group">
+                  <button className="btn btn-primary">Tambah</button>
+                </div>
+            </form>
+          </div>
+        </div>
 
         <List item={this.state.item} />
 			</div>
